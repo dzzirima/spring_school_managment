@@ -1,0 +1,41 @@
+server:
+  port: 4000
+spring:
+  profiles:
+    active: qa
+---
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: smallfish
+    url: jdbc:mysql://localhost:3306/dcbapp
+    password: SmallFish@1!
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+---
+spring:
+  profiles: qa
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: smallfish
+    url: jdbc:mysql://localhost:3306/dcbqa
+    password: SmallFish@1!
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+---
+spring:
+  profiles: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: smallfish
+    url: jdbc:mysql://localhost:3306/dcbprod
+    password: SmallFish@1!
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
